@@ -56,8 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GameEnvironment.cs" />
-    <Compile Include="Assets\State.cs" />
     <Compile Include="Assets\AI.cs" />
+    <Compile Include="Assets\State.cs" />
+    <Compile Include="Assets\State\Idle.cs" />
+    <Compile Include="Assets\State\Patrol.cs" />
+    <Compile Include="Assets\State\Pursue.cs" />
+    <Compile Include="Assets\State\Attack.cs" />
+    <Compile Include="Assets\State\Safe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

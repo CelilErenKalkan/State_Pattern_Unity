@@ -8,9 +8,15 @@ namespace Assets
     {
         private static GameEnvironment instance;
         private List<GameObject> checkpointsList = new List<GameObject>();
+        private List<GameObject> safepointsList = new List<GameObject>();
         public List<GameObject> CheckpointsList
         {
             get { return checkpointsList; }
+        }
+
+        public List<GameObject> SafepointsList
+        {
+            get { return safepointsList; }
         }
 
         public static GameEnvironment Singleton
@@ -20,8 +26,12 @@ namespace Assets
                 if (instance == null)
                 {
                     instance = new GameEnvironment();
+
                     instance.CheckpointsList.AddRange(GameObject.FindGameObjectsWithTag("Checkpoint"));
                     instance.checkpointsList = instance.checkpointsList.OrderBy(waypoint => waypoint.name).ToList();
+
+                    instance.SafepointsList.AddRange(GameObject.FindGameObjectsWithTag("Safe"));
+                    instance.safepointsList = instance.safepointsList.OrderBy(waypoint => waypoint.name).ToList();
                 }
 
                 return instance;
